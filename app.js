@@ -6,13 +6,28 @@ let flow = "", crypto = "";
 renderHome();
 
 function renderHome() {
+  const prices = Object.keys(DATA.rates).map(c => `
+    <div class="price-box">
+      <strong>${c}</strong>
+      <p>Buy: ${DATA.rates[c].buy} GHS</p>
+      <p>Sell: ${DATA.rates[c].sell} GHS</p>
+    </div>
+  `).join("");
+
   app.innerHTML = `
     <div class="card">
       <h2>Cryptoghana</h2>
+
+      <div class="price-grid">
+        ${prices}
+      </div>
+
       <button onclick="start('buy')">Buy Crypto</button>
       <button onclick="start('sell')">Sell Crypto</button>
-    </div>`;
+    </div>
+  `;
 }
+
 
 function start(type) {
   flow = type;
