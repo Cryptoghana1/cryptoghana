@@ -47,18 +47,26 @@ input, select {
 
 .bg-crypto span {
   position: fixed;
-  font-size: 40px;
-  opacity: 0.06;
-  animation: float 12s infinite linear;
+  font-size: 64px;
+  font-weight: bold;
+  opacity: 0.18;
+  animation: float 14s infinite linear;
+  z-index: 0;
 }
 
+/* COLORS */
+.btc { color: #f2a900; }     /* Gold */
+.eth { color: #000000; }     /* Black */
+.usdt { color: #26a17b; }    /* Green */
+.ltc { color: #345c9c; }     /* Blue */
+
+/* POSITIONS */
 .bg-crypto span:nth-child(1){left:10%;animation-delay:0s;}
-.bg-crypto span:nth-child(2){left:30%;animation-delay:3s;}
-.bg-crypto span:nth-child(3){left:50%;animation-delay:6s;}
-.bg-crypto span:nth-child(4){left:70%;animation-delay:9s;}
-.bg-crypto span:nth-child(5){left:90%;animation-delay:12s;}
+.bg-crypto span:nth-child(2){left:30%;animation-delay:4s;}
+.bg-crypto span:nth-child(3){left:50%;animation-delay:8s;}
+.bg-crypto span:nth-child(4){left:70%;animation-delay:12s;}
 
 @keyframes float {
   from { top: 110%; }
-  to { top: -10%; }
+  to { top: -20%; }
 }
