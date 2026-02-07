@@ -52,6 +52,45 @@ function payment() {
   `;
 }
 
+function showPaymentDetails(type) {
+  let details = "";
+
+  if (type === "momo") {
+    details = `
+      <strong>MTN Mobile Money</strong><br>
+      ${DATA.payments.momo.number}<br>
+      ${DATA.payments.momo.name}
+    `;
+  }
+
+  if (type === "vodafone") {
+    details = `
+      <strong>Vodafone Cash</strong><br>
+      ${DATA.payments.vodafone.number}<br>
+      ${DATA.payments.vodafone.name}
+    `;
+  }
+
+  if (type === "bank") {
+    details = `
+      <strong>${DATA.payments.bank.bank}</strong><br>
+      ${DATA.payments.bank.name}<br>
+      ${DATA.payments.bank.number}
+    `;
+  }
+
+  app.innerHTML = `
+    <div class="card">
+      <h2>Make Payment</h2>
+      <p>${details}</p>
+      <button onclick="sendWhatsApp('I have sent payment')">
+        I HAVE SENT PAYMENT
+      </button>
+    </div>
+  `;
+}
+
+
 function sellForm() {
   app.innerHTML = `
     <div class="card">
