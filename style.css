@@ -1,93 +1,3 @@
-/* ---------- BASE ---------- */
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: white;
-  color: #111;
-  overflow-x: hidden;
-}
-
-#app, #admin {
-  max-width: 420px;
-  margin: 60px auto;
-  position: relative;
-  z-index: 10;
-}
-
-/* ---------- CARD ---------- */
-
-.card {
-  background: rgba(255,255,255,0.95);
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 12px 40px rgba(0,0,0,.12);
-  text-align: center;
-}
-
-/* ---------- TEXT ---------- */
-
-h2 { margin-bottom: 15px; }
-
-.small {
-  font-size: 13px;
-  opacity: .7;
-}
-
-/* ---------- INPUTS ---------- */
-
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-}
-
-/* ---------- BUTTONS ---------- */
-
-button {
-  width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 12px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(37,99,235,.35);
-}
-
-/* ---------- PRICE BOXES ---------- */
-
-.price-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.price-box {
-  background: #f8fafc;
-  border-radius: 14px;
-  padding: 14px;
-  font-size: 14px;
-  box-shadow: inset 0 0 0 1px #e5e7eb;
-}
-
-.price-box strong {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
 /* ---------- FLOATING BACKGROUND ---------- */
 
 .bg-crypto {
@@ -97,27 +7,34 @@ button:hover {
   pointer-events: none;
 }
 
+/* Shared floating items */
 .bg-crypto span {
-  position: absolute;
+  position: fixed;
   font-weight: 800;
   white-space: nowrap;
-  animation: float 20s linear infinite;
+  animation: float 26s linear infinite;
+  pointer-events: none;
 }
 
-/* Crypto logos */
+/* ---------- CRYPTO LOGOS (CLEAR & BOLD) ---------- */
+
 .bg-crypto span.btc,
 .bg-crypto span.eth,
 .bg-crypto span.usdt,
 .bg-crypto span.ltc {
-  font-size: 64px;
-  opacity: 0.22;
+  font-size: 70px;
+  opacity: 0.6;                /* MUCH MORE VISIBLE */
+  text-shadow: 0 6px 18px rgba(0,0,0,0.18);
 }
 
-/* Slogan text */
+/* ---------- SLOGANS (READABLE, NOT CLASHING) ---------- */
+
 .bg-crypto span.text {
-  font-size: 26px;
-  opacity: 0.15;
-  letter-spacing: 1px;
+  font-size: 22px;             /* Reduced to avoid collision */
+  opacity: 0.55;               /* Visible but elegant */
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  text-shadow: 0 4px 12px rgba(37,99,235,0.25);
 }
 
 /* ---------- COLORS ---------- */
@@ -126,23 +43,23 @@ button:hover {
 .eth { color: #000000; }     /* Black */
 .usdt { color: #26a17b; }    /* Green */
 .ltc { color: #345c9c; }     /* Blue */
-.text { color: #2563eb; }   /* Slogans */
+.text { color: #2563eb; }   /* Blue slogans */
 
-/* ---------- POSITIONS ---------- */
+/* ---------- LANES (NO OVERLAP GUARANTEED) ---------- */
 
-/* Crypto logos */
+/* Crypto logo lanes */
 .bg-crypto span:nth-child(1){ left: 8%;  animation-delay: 0s; }
-.bg-crypto span:nth-child(2){ left: 28%; animation-delay: 5s; }
-.bg-crypto span:nth-child(3){ left: 48%; animation-delay: 10s; }
-.bg-crypto span:nth-child(4){ left: 68%; animation-delay: 15s; }
+.bg-crypto span:nth-child(2){ left: 30%; animation-delay: 6s; }
+.bg-crypto span:nth-child(3){ left: 55%; animation-delay: 12s; }
+.bg-crypto span:nth-child(4){ left: 78%; animation-delay: 18s; }
 
-/* Slogans (separated lanes) */
-.bg-crypto span:nth-child(5){ left: 15%; animation-delay: 7s; }
-.bg-crypto span:nth-child(6){ left: 55%; animation-delay: 13s; }
+/* Slogan lanes (WIDER GAP) */
+.bg-crypto span:nth-child(5){ left: 18%; animation-delay: 9s; }
+.bg-crypto span:nth-child(6){ left: 62%; animation-delay: 15s; }
 
 /* ---------- ANIMATION ---------- */
 
 @keyframes float {
-  from { top: 110%; }
-  to { top: -30%; }
+  from { top: 120%; }
+  to   { top: -35%; }
 }
