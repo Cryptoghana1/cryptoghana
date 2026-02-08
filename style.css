@@ -7,36 +7,33 @@
   pointer-events: none;
 }
 
-/* Base floating item */
 .bg-crypto span {
   position: fixed;
   font-weight: 800;
   white-space: nowrap;
-  animation: float 26s linear infinite;
-  pointer-events: none;
+  animation: float 28s linear infinite;
 }
 
-/* ---------- CRYPTO LOGOS ---------- */
+/* ---------- LOGOS ---------- */
 
 .bg-crypto span.btc,
 .bg-crypto span.eth,
 .bg-crypto span.usdt,
 .bg-crypto span.ltc {
   font-size: 70px;
-  opacity: 0.6;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  opacity: 0.55;
+  text-shadow: 0 6px 18px rgba(0,0,0,.2);
 }
 
 /* ---------- SLOGANS ---------- */
 
 .bg-crypto span.text {
   font-size: 22px;
-  opacity: 0.55;
-  letter-spacing: 1.2px;
-  font-weight: 700;
-  max-width: 320px;
+  opacity: 0.5;
+  max-width: 360px;
   text-align: center;
-  text-shadow: 0 4px 12px rgba(37,99,235,0.25);
+  letter-spacing: 1px;
+  text-shadow: 0 4px 12px rgba(37,99,235,.25);
 }
 
 /* ---------- COLORS ---------- */
@@ -47,24 +44,20 @@
 .ltc { color: #345c9c; }
 .text { color: #2563eb; }
 
-/* ---------- LOGO LANES ---------- */
+/* ---------- LANES (ABSOLUTE CONTROL) ---------- */
 
-.bg-crypto span.btc:nth-of-type(1) { left: 8%;  animation-delay: 0s; }
-.bg-crypto span.eth:nth-of-type(1) { left: 28%; animation-delay: 6s; }
-.bg-crypto span.usdt:nth-of-type(1){ left: 48%; animation-delay: 12s; }
-.bg-crypto span.ltc:nth-of-type(1) { left: 68%; animation-delay: 18s; }
+[data-lane="1"]  { left: 8%;  animation-delay: 0s; }
+[data-lane="2"]  { left: 28%; animation-delay: 5s; }
+[data-lane="3"]  { left: 48%; animation-delay: 10s; }
+[data-lane="4"]  { left: 68%; animation-delay: 15s; }
 
-/* ---------- NAME LANES ---------- */
+[data-lane="5"]  { left: 18%; animation-delay: 3s; }
+[data-lane="6"]  { left: 38%; animation-delay: 8s; }
+[data-lane="7"]  { left: 58%; animation-delay: 13s; }
+[data-lane="8"]  { left: 78%; animation-delay: 18s; }
 
-.bg-crypto span.btc:nth-of-type(2) { left: 18%; animation-delay: 3s; }
-.bg-crypto span.eth:nth-of-type(2) { left: 38%; animation-delay: 9s; }
-.bg-crypto span.usdt:nth-of-type(2){ left: 58%; animation-delay: 15s; }
-.bg-crypto span.ltc:nth-of-type(2) { left: 78%; animation-delay: 21s; }
-
-/* ---------- SLOGAN LANES ---------- */
-
-.bg-crypto span.text:nth-of-type(1){ left: 25%; animation-delay: 10s; }
-.bg-crypto span.text:nth-of-type(2){ left: 60%; animation-delay: 16s; }
+[data-lane="9"]  { left: 25%; animation-delay: 11s; }
+[data-lane="10"] { left: 60%; animation-delay: 17s; }
 
 /* ---------- ANIMATION ---------- */
 
