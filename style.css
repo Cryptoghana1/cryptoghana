@@ -3,10 +3,11 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: yellow;
+  background: rgba(0, 180, 216, 0.15);
   color: #111;
   overflow-x: hidden;
 }
+
 
 #app, #admin {
   max-width: 420px;
