@@ -8,6 +8,7 @@ body {
   overflow-x: hidden;
 }
 
+
 #app, #admin {
   max-width: 420px;
   margin: 60px auto;
