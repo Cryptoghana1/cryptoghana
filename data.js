@@ -1,9 +1,9 @@
 const DEFAULT_DATA = {
   rates: {
-    BTC: { buy: 12.0, sell: 11.1 },
-    USDT: { buy: 12.0, sell: 11.1 },
-    ETH: { buy: 12.5, sell: 11.5 },
-    LTC: { buy: 10.5, sell: 9.5 }
+    BTC: { buy: 13.01, sell: 10.9 },
+    USDT: { buy: 12.5, sell: 10.5 },
+    ETH: { buy: 12.5, sell: 10.5 },
+    LTC: { buy: 12.5, sell: 10.5 }
   },
   wallets: {
     BTC: "322tdJgsdighCbPD6WTCU2dJMBiJ7ikE35",
